@@ -13,6 +13,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
 
+    <!-- Add Toastify -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+
     <!-- Add Tailwindcss  -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -159,7 +163,7 @@
     <!-- Strat Chackout Button -->
        <button 
         onclick="openCart()"
-        class="floatingCheckout Roboto w-[120px] h-[40px] fixed bottom-5 right-[33%] md:right-[45%] lg:right-[46.5vw] bg-[#FFBB5A] text-[#364A63] rounded-full shadow-lg font-bold text-[14px] hover:text-[16px] duration-300 cursor-pointer hidden">
+        class="floatingCheckout Roboto w-[120px] h-[40px] fixed bottom-5 right-[1%] md:right-[45%] lg:right-[46.5vw] bg-[#FFBB5A] text-[#364A63] rounded-full shadow-lg font-bold text-[14px] hover:text-[16px] duration-300 cursor-pointer hidden">
           Chackout
         <span class="totalItem ml-[5px] bg-[#FFFFFF] px-[6px] py-[2px] rounded-md text-[12px]">0</span>
        </button>
@@ -191,21 +195,6 @@
               <div class="cartContent">
 
               </div>
-              <!-- <div class="flex justify-between items-center border-b pb-2">
-                <div class="flex w-1/2 items-center justify-start">
-                  <img src="/image/cyan.png" alt="Black Watch" class="w-12 h-12 rounded mr-2">
-                  <p class="text-[14px] font-normal text-[#364A63] sm:text-[12px]">Classy Modern Smart watch</p>
-                </div>
-
-                <div class="flex text-[#364A63] text-[14px]">
-                  <div class="flex justify-evenly gap-3">
-                    <p class="flex w-[30px] font-normal justify-center">Black</p>
-                    <p class="flex w-[30px] font-bold justify-center">XL</p>
-                    <p class="flex w-[30px] font-bold justify-center">1</p>
-                  </div>
-                  <div class="flex w-[80px] font-bold text-[16px] justify-end">$99.00</div>
-                </div>
-              </div> -->
               <!-- Total Section -->
               <div class="mt-4">
                 <div class="flex justify-between font-bold text-[16px]">
@@ -227,7 +216,11 @@
                   onclick="hideModal(event)"
                   class="px-6 py-2 text-[#364A63] border border-[#e2e5ee] rounded mr-[24px]">Continue Shopping
                 </button>
-                <button class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Checkout</button>
+
+                <button
+                  onclick="closeModal(event)" 
+                  class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Checkout
+                </button>
               </form>
             </div>
           </div>

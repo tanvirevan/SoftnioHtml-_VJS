@@ -103,40 +103,71 @@ function setSize(Button, size, price)
     selectedSize = size;
     selectedPrice = price;
   }
+function reSetSizePrice (size, price)
+  {
+    selectedSize = size;
+    selectedPrice = price;
+  }
 
 // Selected products add to Cart
 function addToCart() 
-  {
-    const newItem = 
-      {
-        id: cart.length + 1,
-        color: selectedColor,
-        size: selectedSize,
-        price: selectedPrice,
-        quantity: selectedQty,
-        image: `image/${selectedColor}.png`,
-        name: "Classy Modern Smart Watch"
-      };
+{
+  const newItem = 
+    {
+      id: cart.length + 1,
+      color: selectedColor,
+      size: selectedSize,
+      price: selectedPrice,
+      quantity: selectedQty,
+      image: `image/${selectedColor}.png`,
+      name: "Classy Modern Smart Watch"
+    };
 
-    if (selectedSize === '') 
-      {
-        alert(`Size Selected Empty`);
-      } 
-    else if (selectedQty < 1) 
-      {
-        alert("Minimum order is 1 product");
-      } 
-    else 
-      {
-        cart.push(newItem);
-        updateCheckoutButton();
+  if (selectedSize === '') 
+    {
+      Toastify({
+        text: "Please Select A Size",
+        duration: 1500,
+        close: false, 
+        gravity: "top",
+        position: "center",
+        borderRadius: "20px",
+        backgroundColor: "red",
+      }).showToast();
+      
+    } 
+  else if (selectedQty < 1) 
+    {
+      Toastify({
+        text: "Minimum order is 1 product",
+        duration: 1500,
+        close: false, 
+        gravity: "top",
+        position: "center",
+        borderRadius: "20px",
+        backgroundColor: "red",
+      }).showToast();
+    } 
+  else 
+    {
+      cart.push(newItem);
+      Toastify({
+        text: "Products Added",
+        duration: 1500,
+        close: false, 
+        gravity: "top",
+        position: "center",
+        borderRadius: "20px",
+        backgroundColor: "green",
+      }).showToast();
+      updateCheckoutButton();
 
-        // Reset UI and variables
-        sizeButtonStyle(null);
-        qtySelector('Reset');
-        selectedSize = '';
-      }
-  }
+      // Reset only necessary fields
+      qtySelector('Reset');
+      reSetSizePrice('', '');
+      sizeButtonStyle(null)
+    }
+}
 
 
 function updateCheckoutButton() 
@@ -202,4 +233,25 @@ function hideModal(event)
     const cartModal = document.querySelector('.chakoutCart');
     cartModal.close();
   }
-  
+
+function closeModal (event)
+  {
+    event.preventDefault();
+    const cartModal = document.querySelector('.chakoutCart');
+    Toastify({
+      text: "CHECKOUT SUCCESSFUL",
+      duration: 700,
+      close: false, 
+      gravity: "top",
+      position: "center",
+      borderRadius: "20px",
+      backgroundColor: "red",
+    }).showToast();
+      
+    // Use a timeout with the same duration as autoClose to close the modal after toast shows
+    setTimeout(() => 
+      {
+        cartModal.close();
+        window.location.reload();
+      }, 800);
+  }
