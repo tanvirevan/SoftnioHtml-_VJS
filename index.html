@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.19/dist/full.min.css" rel="stylesheet" type="text/css" />
+
+    <!-- Add coustom CSS style  -->
+    <link rel="stylesheet" href="./style/style.css">
+
+    <!-- Add Roboto Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+    <!-- Add Tailwindcss  -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <title>SoftIno</title>
+
+  </head>
+
+  <body>
+    <div class="flex justify-center mt-[40px] md:mt-[120px] min-h-screen">
+      <div class="Roboto lg:flex md:flex md:max-h-[700px] p-4 max-h-[720px] max-w-[1320px] w-full gap-[60px]">
+
+        <!-- Products Image -->
+          <div class="w-full md:w-1/2  flex justify-center items-center shadow-md">
+            <img src="/image/purple.png" alt="Product Image" class="product-image h-full w-full rounded">
+          </div>
+        <!-- End Products Image -->
+
+        <!-- Start Products Details -->
+          <div class="flex w-full md:w-1/2 py-4 items-center">
+            <div>
+              <h1 class="Roboto text-[#364A63] text-[25px] md:text-[40px] font-bold mb-1">Classy Modern Smart Watch</h1>
+              <!-- Star Rating -->
+              <div class="flex items-center mb-5">
+                <span class="text-yellow-400 text-lg">★★★★☆</span>
+                <span class="text-gray-600 ml-2 text-sm">(2 Reviews)</span>
+              </div>
+      
+              <!-- Price Section -->
+              <div class="mb-4">
+                <span class="text-gray-500 line-through text-sm">$99.00</span>
+                <span class="text-[#6576FF] font-bold text-xl ml-2">$79.00</span>
+              </div>
+      
+              <!-- Product Description -->
+              <p class="text-[#8091A7] text-[18px] font-normal mb-4">
+                I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born, and I will give you a complete account of the system.
+              </p>
+      
+              <!-- Product Type and Model -->
+              <div class="mb-3">
+                <span class="font-normal text-[#8091A7] text-[18px] mr-11 mb-2">Type:</span> <span class="font-normal text-[#8091A7] text-[18px]">Model Number</span><br>
+                <span class="font-bold text-[#364A63] text-[16px] mr-11">Wacth</span> <span class="font-bold text-[#364A63] text-[16px]">Forerunner 290XT</span>
+              </div>
+      
+              <!-- Band Colors -->
+              <div class="flex items-center h-[50px] w-full mb-3">
+                <span class="font-bold text-[#364A63] text-[18px] mr-2">Band Color:</span>
+
+                <button
+                  onclick="setSelectedColor(this, 'purple', '#816BFF')"
+                  class="color-btn border-2 border-[#816BFF] flex justify-center items-center p-[2px] rounded-full mr-2 w-8 duration-100"
+                >
+                  <span class="h-6 w-6 rounded-full bg-[#816BFF] inline-block"></span>
+
+                </button>
+
+                <button 
+                  onclick="setSelectedColor(this, 'cyan', '#1FCEC9')"
+                  class="color-btn hover:border-2 hover:border-[#1FCEC9] flex justify-center items-center p-[2px] rounded-full mr-2 w-8 duration-100"
+                >
+                  <span class="h-6 w-6 rounded-full bg-[#1FCEC9] inline-block"></span>
+                </button>
+              
+
+                <button 
+                  onclick="setSelectedColor(this, 'blue', '#4B97D3')" 
+                  class="color-btn hover:border-2 hover:border-[#4B97D3] flex justify-center items-center p-[2px] rounded-full mr-2 w-8 duration-100"
+                >
+                  <span class="h-6 w-6 rounded-full bg-[#4B97D3] inline-block"></span>
+
+                </button>
+
+                <button
+                  onclick="setSelectedColor(this, 'black', '#3B4747')" 
+                  class="color-btn hover:border-2 hover:border-[#3B4747] flex justify-center items-center p-[2px] rounded-full w-8 duration-100"
+                >
+                  <span class="h-6 w-6 rounded-full bg-[#3B4747] inline-block"></span>
+
+                </button>
+
+              </div>
+      
+              <!-- Wrist Size -->
+              <div class="mb-5">
+                <span class="font-bold text-[#364A63] text-[18px]">Wrist Size:</span>
+                <div class="flex items-center mt-2">
+                  <button 
+                    onclick="setSize(this, 'S', 69)"
+                    class="sizeBtn w-[75px] border border-gray-300 px-3 py-1 text-gray-600 rounded hover:text-blue-500 hover:border-blue-500 hover:font-bold mr-2  duration-200"> S  
+                    <spen class="text-gray-600 ml-[3px]">$69</spen>
+                  </button>
+                  <button 
+                    onclick="setSize(this, 'M', 79)"
+                    class="sizeBtn w-[75px] border border-gray-300 px-3 py-1 text-gray-600 rounded hover:text-blue-500 hover:border-blue-500 hover:font-bold mr-2 duration-200"> M  
+                    <spen class="text-gray-600 ml-[2px]">$79</spen>
+                  </button>
+                  <button 
+                    onclick="setSize(this, 'L', 89)"
+                    class="sizeBtn w-[75px] border border-gray-300 px-3 py-1 text-gray-600 rounded hover:text-blue-500 hover:border-blue-500 hover:font-bold mr-2 duration-200"> L  
+                    <spen class="text-gray-600 ml-[2px]">$89</spen>
+                  </button>
+                  <button 
+                    onclick="setSize(this, 'XL', 99)"
+                    class="sizeBtn w-[75px] border border-gray-300 px-3 py-1 text-gray-600 rounded hover:text-blue-500 hover:border-blue-500 hover:font-bold duration-200 mr-3"> Xl  
+                    <spen class="text-gray-600 ml-[2px]">$99</spen>
+                  </button>
+                </div>
+              </div>
+      
+              <!-- Add to Cart -->
+              <div class="flex items-center gap-[12px]">
+                <div class="flex items-center border border-gray-300 rounded-lg overflow-hidden w-32">
+                  <!-- Minus Button -->
+                  <button
+                    onclick="qtySelector('Decrement')"
+                    class="w-1/3 h-10 text-gray-500 hover:bg-gray-200 flex justify-center items-center duration-300">
+                    <span class="text-2xl font-semibold">−</span>
+                  </button>
+
+                  <!-- Number Display -->
+                  <div class="Counter w-1/3 h-10 flex justify-center items-center text-[14px] text-[#364A63] font-semibold">
+                    0
+                  </div>
+
+                  <!-- Plus Button -->
+                  <button 
+                    onclick="qtySelector('Increment')"
+                    class="w-1/3 h-10 text-gray-500 hover:bg-gray-200 flex justify-center items-center duration-300">
+                    <span class="text-2xl font-semibold">+</span>
+                  </button>
+                </div>
+              
+                <button 
+                  onclick="addToCart()" 
+                  class="bg-[#6576FF] text-[#FFFFFF] px-[18px] py-[8px] rounded hover:bg-blue-600 duration-500">Add to Cart</button>
+                  <img src="./image/love.png" >
+              </div>
+            </div>
+          </div>
+        <!-- End Products Details -->
+      </div>
+    </div>
+
+    <!-- Strat Chackout Button -->
+       <button 
+        onclick="openCart()"
+        class="floatingCheckout Roboto w-[120px] h-[40px] fixed bottom-5 right-[33%] md:right-[45%] lg:right-[46.5vw] bg-[#FFBB5A] text-[#364A63] rounded-full shadow-lg font-bold text-[14px] hover:text-[16px] duration-300 cursor-pointer hidden">
+          Chackout
+        <span class="totalItem ml-[5px] bg-[#FFFFFF] px-[6px] py-[2px] rounded-md text-[12px]">0</span>
+       </button>
+    <!-- End Chackout Button -->
+
+
+    <!-- Start Modal -->  
+      <dialog class="chakoutCart modal modal-bottom sm:modal-middle sm:mb-[100px]">
+          <div class="modal-box Roboto max-w-[652px] max-h[48px]">
+            <h2 class="text-[22px] text-[#364A63] font-bold mb-4">Your Cart</h2>
+        
+            <div class="flex justify-between font-normal text-[#8091A7] text-[14px] border-b">
+              
+              <div class="flex text-start">Item</div>
+
+              <div class="flex justify-between text-[#8091A7] font-normal text-[14px]">
+                <div class="flex justify-evenly gap-3">
+                  <p class="flex w-[30px] text-center">Color</p>
+                  <p class="flex w-[30px] text-center">Size</p>
+                  <p class="flex w-[30px] text-center">Qty</p>
+                </div>
+                <div class="flex w-[80px] justify-end">Price</div>
+              </div> 
+            </div>
+        
+            <div id="cartItems" class="space-y-4 mt-4">
+              <!-- Items -->
+               
+              <div class="cartContent">
+
+              </div>
+              <!-- <div class="flex justify-between items-center border-b pb-2">
+                <div class="flex w-1/2 items-center justify-start">
+                  <img src="/image/cyan.png" alt="Black Watch" class="w-12 h-12 rounded mr-2">
+                  <p class="text-[14px] font-normal text-[#364A63] sm:text-[12px]">Classy Modern Smart watch</p>
+                </div>
+
+                <div class="flex text-[#364A63] text-[14px]">
+                  <div class="flex justify-evenly gap-3">
+                    <p class="flex w-[30px] font-normal justify-center">Black</p>
+                    <p class="flex w-[30px] font-bold justify-center">XL</p>
+                    <p class="flex w-[30px] font-bold justify-center">1</p>
+                  </div>
+                  <div class="flex w-[80px] font-bold text-[16px] justify-end">$99.00</div>
+                </div>
+              </div> -->
+              <!-- Total Section -->
+              <div class="mt-4">
+                <div class="flex justify-between font-bold text-[16px]">
+                  <span>Total</span>
+                  <div class="flex">
+                    <span class="totalQty flex w-[30px] text-[14px] justify-center">0</span>
+                    <span class="flex w-[80px] text-[16px] justify-end"> 
+                      <span>$</span>
+                      <span class="totalAmount"></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="modal-action Roboto text-[14px] font-bold">
+              <form method="dialog flex ">
+                <button
+                  onclick="hideModal(event)"
+                  class="px-6 py-2 text-[#364A63] border border-[#e2e5ee] rounded mr-[24px]">Continue Shopping
+                </button>
+                <button class="px-6 py-2 bg-blue-500 text-white rounded hover:bg-blue-600">Checkout</button>
+              </form>
+            </div>
+          </div>
+      </dialog>
+    <!-- End Modal --> 
+
+    <script src="index.js"></script>
+  </body>
+</html>
